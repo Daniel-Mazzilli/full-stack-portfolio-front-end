@@ -1,0 +1,41 @@
+import { useContext, createContext, useState, useEffect } from "react";
+import axios from "axios";
+
+export const ContextData = createContext();
+export function useContextProvider() {
+  return useContext(ContextData);
+}
+
+export default function Provider({ children }) {
+  const API = process.env.REACT_APP_API_URL;
+  const [users, setUsers] = useState([]);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [trigger, setTrigger] = useState(1);
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    axios
+      .get(`${API}/users`)
+      .then((res) => setUsers(res.data))
+      .catch((error) => console.log(error));
+  }, []);
+  return (
+    <ContextData.Provider
+      value={{
+        API,
+        axios,
+        users,
+        setUsers,
+        theme,
+        setTheme,
+        trigger,
+        setTrigger,
+      }}
+    >
+      {children}
+    </ContextData.Provider>
+  );
+}
