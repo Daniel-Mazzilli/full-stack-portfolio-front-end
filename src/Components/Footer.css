@@ -1,0 +1,12 @@
+footer{
+    position: fixed;
+    left:0;
+    bottom: 0;
+    text-align: center;
+    width: 100vw;
+    background-color: rgb(30, 30, 151);
+    color: aquamarine;
+    font-size: 14px;
+    padding: 2px;
+    opacity: 0.85;
+}

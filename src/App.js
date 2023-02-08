@@ -7,7 +7,6 @@ function App() {
   const { theme } = useContextProvider();
   return (
     <div className={`App ${theme}`}>
-      World Traveler Nav
       <RouteComponent />
       <Signup />
     </div>

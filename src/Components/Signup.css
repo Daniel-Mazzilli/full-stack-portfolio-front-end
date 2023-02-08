@@ -39,9 +39,15 @@
   text-decoration: underline;
   margin-left: 4px;
 }
+
+.terms-conditions span:hover{
+    cursor: pointer;
+}
+
 #terms {
     justify-self: left;
 }
+
 #sign-up-submit {
   grid-column: 1/3;
   width: 100px;
