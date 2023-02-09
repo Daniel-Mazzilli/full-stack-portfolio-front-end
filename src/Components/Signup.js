@@ -16,8 +16,9 @@ export default function Signup() {
   });
   const [hideTerms, setHideTerms] = useState(true);
   const [checked, setChecked] = useState(false);
-  const [uniqueUsername, setUniqueUsername] = useState(true);
-  const [uniqueEmail, setUniqueEmail] = useState(true);
+  const [uniqueUsername, setUniqueUsername] = useState(false);
+  const [uniqueEmail, setUniqueEmail] = useState(false);
+  const [hideFormModal, setHideFormModal] = useState(true);
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.id]: event.target.value });
@@ -34,7 +35,7 @@ export default function Signup() {
         .then((res) => setUniqueUsername(res.data.value))
         .catch((error) => console.log(error));
     } else {
-      setUniqueUsername(true);
+      setUniqueUsername(false);
     }
   }, [user.username]);
 
@@ -45,14 +46,23 @@ export default function Signup() {
         .then((res) => setUniqueEmail(res.data.value))
         .catch((error) => console.log(error));
     } else {
-      setUniqueEmail(true);
+      setUniqueEmail(false);
     }
   }, [user.email]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (uniqueEmail && uniqueUsername) {
+      console.log("proceed");
+    } else {
+      setHideFormModal(false)
+    }
+  };
 
   return (
     <div className="sign-up">
       <h2>Create your account</h2>
-      <form className="sign-up-form">
+      <form className="sign-up-form" onSubmit={handleSubmit}>
         <label htmlFor="full_name">Full Name:</label>
         <input
           id="full_name"
@@ -127,12 +137,18 @@ export default function Signup() {
           onChange={() => setChecked(!checked)}
           required
         />
-        <input id="sign-up-submit" type="submit" value="SUBMIT" />
+        <input
+          className={`sign-up-submit ${
+            uniqueEmail && uniqueUsername ? "proceed" : ""
+          }`}
+          type="submit"
+          value="SUBMIT"
+        />
       </form>
       {hideTerms ? (
         <></>
       ) : (
-        <div id="terms-text">
+        <div className="modal">
           <h3>Terms and conditions for use</h3>
           <p>
             You agree to pursue your passion and desire for adventures. Stay
@@ -147,6 +163,13 @@ export default function Signup() {
           >
             agree & close
           </button>
+        </div>
+      )}
+      {hideFormModal ? (
+        <></>
+      ) : (
+        <div className="modal">
+          <p>Form Modal</p>
         </div>
       )}
     </div>

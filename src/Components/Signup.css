@@ -48,7 +48,7 @@
     justify-self: left;
 }
 
-#terms-text {
+.modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -63,19 +63,17 @@
   width: 300px;
 }
 
-#sign-up-submit {
+form .sign-up-submit {
   grid-column: 1/3;
   width: 100px;
-  margin-top: 40px;
+  margin-top: 30px;
   justify-self: center;
-  background-color: darkgreen;
-  color: aquamarine;
   border: 2px solid rgb(30, 30, 151);
   border-radius: 10px;
   padding: 2px;
 }
 
-#sign-up-submit:hover {
+.proceed:hover {
   background-color: rgb(255, 79, 79);
   cursor: pointer;
 }
