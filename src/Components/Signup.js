@@ -17,6 +17,7 @@ export default function Signup() {
   const [hideTerms, setHideTerms] = useState(true);
   const [checked, setChecked] = useState(false);
   const [uniqueUsername, setUniqueUsername] = useState(true);
+  const [uniqueEmail, setUniqueEmail] = useState(true);
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.id]: event.target.value });
@@ -29,7 +30,7 @@ export default function Signup() {
   useEffect(() => {
     if (user.username !== "") {
       axios
-        .get(`${API}/users/${user.username.toLowerCase()}`)
+        .get(`${API}/users/usernames/${user.username.toLowerCase()}`)
         .then((res) => setUniqueUsername(res.data.value))
         .catch((error) => console.log(error));
     } else {
@@ -37,11 +38,22 @@ export default function Signup() {
     }
   }, [user.username]);
 
+  useEffect(() => {
+    if (user.email !== "") {
+      axios
+        .get(`${API}/users/emails/${user.email.toLowerCase()}`)
+        .then((res) => setUniqueEmail(res.data.value))
+        .catch((error) => console.log(error));
+    } else {
+      setUniqueEmail(true);
+    }
+  }, [user.email]);
+
   return (
     <div className="sign-up">
       <h2>Create your account</h2>
       <form className="sign-up-form">
-        <label htmlFor="full_name">Full Name: </label>
+        <label htmlFor="full_name">Full Name:</label>
         <input
           id="full_name"
           type="text"
@@ -49,7 +61,19 @@ export default function Signup() {
           value={user.full_name}
           required
         />
-        <label htmlFor="email">Email: </label>
+        <label htmlFor="email">
+          Email
+          {user.email === "" ? null : uniqueEmail ? (
+            <span>
+              <img src={Check} alt="checkmark" height="18px" />
+            </span>
+          ) : (
+            <span>
+              <img src={xIcon} alt="x icon" height="18px" />
+            </span>
+          )}
+          :
+        </label>
         <input
           id="email"
           type="email"
