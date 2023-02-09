@@ -77,3 +77,13 @@ form .sign-up-submit {
   background-color: rgb(255, 79, 79);
   cursor: pointer;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(35, 11, 1, 0.9);
+  z-index: 1000;
+}

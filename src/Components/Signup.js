@@ -55,7 +55,7 @@ export default function Signup() {
     if (uniqueEmail && uniqueUsername) {
       console.log("proceed");
     } else {
-      setHideFormModal(false)
+      setHideFormModal(false);
     }
   };
 
@@ -148,30 +148,40 @@ export default function Signup() {
       {hideTerms ? (
         <></>
       ) : (
-        <div className="modal">
-          <h3>Terms and conditions for use</h3>
-          <p>
-            You agree to pursue your passion and desire for adventures. Stay
-            curious, and keep exploring the world one trip at a time!
-          </p>
-          <p> Embrace the journey</p>
-          <button
-            onClick={() => {
-              toggleTerms();
-              setChecked(true);
-            }}
-          >
-            agree & close
-          </button>
+        <div className="overlay">
+          <div className="modal">
+            <h3>Terms and conditions for use</h3>
+            <p>
+              You agree to pursue your passion and desire for adventures. Stay
+              curious, and keep exploring the world one trip at a time!
+            </p>
+            <p> Embrace the journey</p>
+            <button
+              onClick={() => {
+                toggleTerms();
+                setChecked(true);
+              }}
+            >
+              agree & close
+            </button>
+          </div>
         </div>
       )}
       {hideFormModal ? (
         <></>
       ) : (
-        <div className="modal">
-          <p>{!uniqueEmail && `${user.email} is linked to an existing account. Recover your credentials or use a different email.`}</p>
-          <p>{!uniqueUsername && `${user.username} is already in use, please try a different username.`}</p>
-          <button onClick={()=> setHideFormModal(true)}>close</button>
+        <div className="overlay">
+          <div className="modal">
+            <p>
+              {!uniqueEmail &&
+                `${user.email} is linked to an existing account. Recover your credentials or use a different email.`}
+            </p>
+            <p>
+              {!uniqueUsername &&
+                `${user.username} is already in use, please try a different username.`}
+            </p>
+            <button onClick={() => setHideFormModal(true)}>close</button>
+          </div>
         </div>
       )}
     </div>
