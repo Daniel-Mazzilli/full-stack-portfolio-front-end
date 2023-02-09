@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useContextProvider } from "../Provider/Provider.js";
 import SelectCountry from "./SelectCountry.js";
+import Check from "../Assets/check.png";
+import xIcon from "../Assets/x-icon.png";
 import "./Signup.css";
 
 export default function Signup() {
@@ -14,6 +16,7 @@ export default function Signup() {
   });
   const [hideTerms, setHideTerms] = useState(true);
   const [checked, setChecked] = useState(false);
+  const [uniqueUsername, setUniqueUsername] = useState(true);
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.id]: event.target.value });
@@ -22,6 +25,17 @@ export default function Signup() {
   const toggleTerms = () => {
     setHideTerms(!hideTerms);
   };
+
+  useEffect(() => {
+    if (user.username !== "") {
+      axios
+        .get(`${API}/users/${user.username.toLowerCase()}`)
+        .then((res) => setUniqueUsername(res.data.value))
+        .catch((error) => console.log(error));
+    } else {
+      setUniqueUsername(true);
+    }
+  }, [user.username]);
 
   return (
     <div className="sign-up">
@@ -43,7 +57,19 @@ export default function Signup() {
           value={user.email}
           required
         />
-        <label htmlFor="username">Username: </label>
+        <label htmlFor="username">
+          Username
+          {user.username === "" ? null : uniqueUsername ? (
+            <span>
+              <img src={Check} alt="checkmark" height="18px" />
+            </span>
+          ) : (
+            <span>
+              <img src={xIcon} alt="x icon" height="18px" />
+            </span>
+          )}
+          :
+        </label>
         <input
           id="username"
           type="text"
@@ -52,7 +78,7 @@ export default function Signup() {
           value={user.username}
           required
         />
-        <label htmlFor="password">Password: </label>
+        <label htmlFor="password">Password:</label>
         <input
           id="password"
           type="password"
@@ -74,7 +100,7 @@ export default function Signup() {
           id="terms"
           type="checkbox"
           checked={checked}
-          onClick={() => setChecked(!checked)}
+          onChange={() => setChecked(!checked)}
           required
         />
         <input id="sign-up-submit" type="submit" value="SUBMIT" />
@@ -88,7 +114,7 @@ export default function Signup() {
             You agree to pursue your passion and desire for adventures. Stay
             curious, and keep exploring the world one trip at a time!
           </p>
-          <p> Embrace the journey.</p>
+          <p> Embrace the journey</p>
           <button
             onClick={() => {
               toggleTerms();
