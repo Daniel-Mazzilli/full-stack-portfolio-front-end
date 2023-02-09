@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useContextProvider } from "../Provider/Provider.js";
 import SelectCountry from "./SelectCountry.js";
 import Check from "../Assets/check.png";
@@ -6,6 +7,7 @@ import xIcon from "../Assets/x-icon.png";
 import "./Signup.css";
 
 export default function Signup() {
+  const navigate = useNavigate();
   const { API, axios, users } = useContextProvider();
   const [user, setUser] = useState({
     full_name: "",
@@ -19,6 +21,7 @@ export default function Signup() {
   const [uniqueUsername, setUniqueUsername] = useState(false);
   const [uniqueEmail, setUniqueEmail] = useState(false);
   const [hideFormModal, setHideFormModal] = useState(true);
+  const [hideConfirmation, setHideConfirmation] = useState(true);
 
   const handleChange = (event) => {
     setUser({ ...user, [event.target.id]: event.target.value });
@@ -53,7 +56,10 @@ export default function Signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (uniqueEmail && uniqueUsername) {
-      console.log("proceed");
+      axios
+        .post(`${API}/users`, user)
+        .then(() => setHideConfirmation(false))
+        .catch((error) => console.log(error));
     } else {
       setHideFormModal(false);
     }
@@ -181,6 +187,19 @@ export default function Signup() {
                 `${user.username} is already in use, please try a different username.`}
             </p>
             <button onClick={() => setHideFormModal(true)}>close</button>
+          </div>
+        </div>
+      )}
+      {hideConfirmation ? (
+        <></>
+      ) : (
+        <div className="overlay">
+          <div className="modal congrats">
+            <h2>Congratulations!</h2><p>Account succesfully created!</p>
+            <button onClick={()=>{
+              setHideConfirmation(true);
+              navigate("/sign-in")
+            }}>proceed to log-in page</button>
           </div>
         </div>
       )}

@@ -54,13 +54,22 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
-  border: 2px solid #282c34;
+  border: 2px solid rgb(255, 79, 79);
   background-color: rgb(234, 217, 217);
   border-radius: 4px;
   padding: 20px;
   color: #282c34;
   font-size: 12px;
   width: 300px;
+}
+
+.congrats {
+  color: darkgreen;
+  text-align: center;
+}
+
+.congrats p{
+  font-size: 14px;
 }
 
 form .sign-up-submit {
