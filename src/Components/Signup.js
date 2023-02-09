@@ -169,7 +169,9 @@ export default function Signup() {
         <></>
       ) : (
         <div className="modal">
-          <p>Form Modal</p>
+          <p>{!uniqueEmail && `${user.email} is linked to an existing account. Recover your credentials or use a different email.`}</p>
+          <p>{!uniqueUsername && `${user.username} is already in use, please try a different username.`}</p>
+          <button onClick={()=> setHideFormModal(true)}>close</button>
         </div>
       )}
     </div>
