@@ -5,8 +5,9 @@ import "./Nav.css";
 export default function Nav() {
   return (
     <nav>
-      <Link><img src={logo} alt="logo" height="80px"/></Link>
-      <Link>Log-in</Link>
+      <img src={logo} alt="logo" height="80px"/>
+      <Link to="/"><h2>Travel the World</h2></Link>
+      <Link className="nav-link" to="/sign-in">Sign-in</Link>
     </nav>
   );
 }

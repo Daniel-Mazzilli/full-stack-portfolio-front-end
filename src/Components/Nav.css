@@ -5,8 +5,32 @@ nav {
     top: 0;
     left: 0;
     width: 100vw;; */
-  display: flex;
-  padding: 8px 10px;
+  padding: 4px 26px;
   align-items: center;
+  display: flex;
   justify-content: space-between;
+  color: rgb(30, 30, 151);
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a h2 {
+    font-size: 46px;
+}
+
+.nav-link {
+    font-size: 18px;
+    border: 2px solid aquamarine;
+    border-radius: 10px;
+    background-color: darkgreen;
+    padding: 6px 10px;
+    color: aquamarine;
+    height: auto;
+}
+
+.nav-link:hover {
+    background-color: rgb(30, 30, 151);
+    border: 2px solid aquamarine;
 }
