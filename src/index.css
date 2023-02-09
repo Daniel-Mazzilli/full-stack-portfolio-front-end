@@ -8,3 +8,12 @@ body {
   font-family: "Nunito", Helvetica, Arial;
   /* -webkit-font-smoothing: antialiased; */
 }
+
+#compass-rose {
+  z-index: -1;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 240px;
+  padding-bottom: 20px;
+}
