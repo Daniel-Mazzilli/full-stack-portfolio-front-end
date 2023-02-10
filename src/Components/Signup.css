@@ -40,12 +40,12 @@
   margin-left: 4px;
 }
 
-.terms-conditions span:hover{
-    cursor: pointer;
+.terms-conditions span:hover {
+  cursor: pointer;
 }
 
 #terms {
-    justify-self: left;
+  justify-self: left;
 }
 
 .modal {
@@ -63,12 +63,26 @@
   width: 300px;
 }
 
+.modal span {
+  margin: 0 2px;
+  font-weight: bold;
+}
+
+#span-recover {
+  color: rgb(30, 30, 151);
+  font-weight: 500;
+}
+
+#span-recover:hover {
+  cursor: pointer;
+}
+
 .congrats {
   color: darkgreen;
   text-align: center;
 }
 
-.congrats p{
+.congrats p {
   font-size: 14px;
 }
 
@@ -80,7 +94,7 @@ form .sign-up-submit {
   border: 2px solid rgb(30, 30, 151);
   border-radius: 10px;
   padding: 2px;
-  background-color: rgb(183, 221, 255)
+  background-color: rgb(183, 221, 255);
 }
 
 .proceed:hover {

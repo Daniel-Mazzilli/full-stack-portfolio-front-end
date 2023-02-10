@@ -18,6 +18,10 @@
   padding: 20px;
 }
 
+#sign-in form label {
+    font-weight: bold;
+  }
+
 #sign-in form input {
   color: rgb(30, 30, 151);
 }

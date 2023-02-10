@@ -178,14 +178,29 @@ export default function Signup() {
       ) : (
         <div className="overlay">
           <div className="modal">
-            <p>
-              {!uniqueEmail &&
-                `${user.email} is linked to an existing account. Recover your credentials or use a different email.`}
-            </p>
-            <p>
-              {!uniqueUsername &&
-                `${user.username} is already in use, please try a different username.`}
-            </p>
+            {!uniqueEmail && (
+              <>
+                <p>
+                  <span>{user.email}</span> is linked to an existing account.
+                  <span
+                    id="span-recover"
+                    onClick={() => {
+                      setHideFormModal(true);
+                      navigate("/recover");
+                    }}
+                  >
+                    Recover your credentials
+                  </span>
+                  or use a different email.
+                </p>
+              </>
+            )}
+            {!uniqueUsername && (
+              <p>
+                <span>{user.username}</span> is already in use, please try a
+                different username.
+              </p>
+            )}
             <button onClick={() => setHideFormModal(true)}>close</button>
           </div>
         </div>
@@ -195,11 +210,16 @@ export default function Signup() {
       ) : (
         <div className="overlay">
           <div className="modal congrats">
-            <h2>Congratulations!</h2><p>Account succesfully created!</p>
-            <button onClick={()=>{
-              setHideConfirmation(true);
-              navigate("/sign-in")
-            }}>proceed to log-in page</button>
+            <h2>Congratulations!</h2>
+            <p>Account succesfully created!</p>
+            <button
+              onClick={() => {
+                setHideConfirmation(true);
+                navigate("/sign-in");
+              }}
+            >
+              proceed to log-in page
+            </button>
           </div>
         </div>
       )}

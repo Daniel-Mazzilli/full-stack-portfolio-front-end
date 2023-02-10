@@ -25,6 +25,7 @@ body {
   bottom: 0;
   right: 0;
   height: 160px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
+  padding-right: 10px;
   opacity: 0.9;
 }

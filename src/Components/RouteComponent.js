@@ -9,6 +9,7 @@ export default function RouteComponent() {
         <Route index element={<h1>Home</h1>} />
         <Route path="sign-in" element={<Signin />} />
         <Route path="sign-up" element={<Signup />} />
+        <Route path="recover" element={<h2>Recover Page</h2>} />
         <Route path="not-found" element={<h2>Page Not Found</h2>} />
       </Route>
       <Route path="*" element={<Navigate to="/not-found" />} />
