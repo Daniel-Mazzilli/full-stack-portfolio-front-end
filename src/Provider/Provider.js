@@ -3,6 +3,7 @@ import axios from "axios";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import CompassRose from "../Assets/CompassRose.jpg"
+import Suitcase from "../Assets/suitcase.png"
 
 export const ContextData = createContext();
 export function useContextProvider() {
@@ -39,6 +40,7 @@ export default function Provider({ children }) {
       }}
     >
       <Nav />
+      <img id="suitcase" src={Suitcase} alt="suitcase" />
       <img id="compass-rose" src={CompassRose} alt="compass rose" />
       <Footer />
       {children}
