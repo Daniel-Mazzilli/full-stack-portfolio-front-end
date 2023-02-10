@@ -72,7 +72,7 @@
   font-weight: bold;
 }
 
-.modal button {
+.modal #x {
   font-size: 12px;
   position: absolute;
   top: 0;
@@ -82,7 +82,7 @@
   background-color: rgb(234, 217, 217);
 }
 
-.modal button:hover {
+.modal #x:hover {
   cursor: pointer;
   background-color: rgb(255, 79, 79);
 }

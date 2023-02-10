@@ -27,7 +27,7 @@ export default function Signin() {
       {failedModal && (
         <div className="overlay">
           <div className="modal">
-            <button onClick={() => setFailedModal(false)}>X</button>
+            <button id="x" onClick={() => setFailedModal(false)}>X</button>
             <p>Sign-in failed. Incorrect username and/or password</p>
           </div>
         </div>
