@@ -19,8 +19,8 @@
 }
 
 #sign-in form label {
-    font-weight: bold;
-  }
+  font-weight: bold;
+}
 
 #sign-in form input {
   color: rgb(30, 30, 151);
@@ -51,7 +51,47 @@
   margin-top: 6px;
 }
 
-#sign-in a:hover{
-    color: rgb(255, 79, 79);
-    font-size: 18px;
+#sign-in a:hover {
+  color: rgb(255, 79, 79);
+  font-size: 18px;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border: 2px solid rgb(255, 79, 79);
+  background-color: rgb(234, 217, 217);
+  border-radius: 4px;
+  padding: 20px;
+  color: #282c34;
+  font-size: 14px;
+  width: 400px;
+  font-weight: bold;
+}
+
+.modal button {
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #282c34;
+  border: 1px solid rgb(255, 79, 79);
+  background-color: rgb(234, 217, 217);
+}
+
+.modal button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 79, 79);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(35, 11, 1, 0.9);
+  z-index: 1000;
 }
