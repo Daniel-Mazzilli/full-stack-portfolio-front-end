@@ -1,0 +1,12 @@
+.Map-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Map {
+    border-style: double;
+    width: 800px;
+    background-color: rgb(188, 235, 254);
+}
