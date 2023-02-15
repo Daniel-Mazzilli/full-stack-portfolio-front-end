@@ -11,7 +11,13 @@ export default function Signin() {
     event.preventDefault();
     const username = event.target.username.value;
     const password = event.target.password.value;
-    setFailedModal(true);
+    axios
+      .post(`${API}/users/auth/signin`, { username, password })
+      .then((res) => console.log(res.data))
+      .catch((error) => {
+        console.log(error);
+        setFailedModal(true);
+      });
   };
   return (
     <div id="sign-in">
@@ -27,7 +33,9 @@ export default function Signin() {
       {failedModal && (
         <div className="overlay">
           <div className="modal">
-            <button id="x" onClick={() => setFailedModal(false)}>X</button>
+            <button id="x" onClick={() => setFailedModal(false)}>
+              X
+            </button>
             <p>Sign-in failed. Incorrect username and/or password</p>
           </div>
         </div>

@@ -2,8 +2,8 @@ import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
-import CompassRose from "../Assets/CompassRose.jpg"
-import Suitcase from "../Assets/suitcase.png"
+import CompassRose from "../Assets/CompassRose.jpg";
+import Suitcase from "../Assets/suitcase.png";
 
 export const ContextData = createContext();
 export function useContextProvider() {
@@ -13,6 +13,8 @@ export function useContextProvider() {
 export default function Provider({ children }) {
   const API = process.env.REACT_APP_API_URL;
   const [users, setUsers] = useState([]);
+  const [token, setToken] = useState("");
+  const [signedin, setSignedin] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [trigger, setTrigger] = useState(1);
 
@@ -37,6 +39,9 @@ export default function Provider({ children }) {
         setTheme,
         trigger,
         setTrigger,
+        setToken,
+        signedin,
+        setSignedin
       }}
     >
       <Nav />

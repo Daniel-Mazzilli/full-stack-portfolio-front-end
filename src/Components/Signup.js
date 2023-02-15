@@ -128,7 +128,7 @@ export default function Signup() {
           required
         />
         <label htmlFor="home_country">Home Country:</label>
-        <select id="home_country" onChange={handleChange}>
+        <select id="home_country" onChange={handleChange} required>
           <option value="">Select your home country</option>
           <SelectCountry />
         </select>
