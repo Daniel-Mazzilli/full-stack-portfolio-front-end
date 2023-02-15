@@ -13,10 +13,16 @@ export function useContextProvider() {
 export default function Provider({ children }) {
   const API = process.env.REACT_APP_API_URL;
   const [users, setUsers] = useState([]);
-  const [token, setToken] = useState("");
-  const [signedin, setSignedin] = useState(false);
+  const [signin, setSignin] = useState({
+    username: "",
+    token: "",
+    signedin: false,
+  });
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [trigger, setTrigger] = useState(1);
+
+  let AUTH_TOKEN = signin.token;
+  axios.defaults.headers.common["Authorization"] = `Bearer ${AUTH_TOKEN}`;
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -39,9 +45,8 @@ export default function Provider({ children }) {
         setTheme,
         trigger,
         setTrigger,
-        setToken,
-        signedin,
-        setSignedin
+        signin,
+        setSignin,
       }}
     >
       <Nav />

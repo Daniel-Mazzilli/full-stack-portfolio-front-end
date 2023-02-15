@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContextProvider } from "../Provider/Provider";
 import "./Signin.css";
 
 export default function Signin() {
-  const { axios, API } = useContextProvider();
+  const navigate = useNavigate();
+  const { axios, API, setSignin, signin } = useContextProvider();
   const [failedModal, setFailedModal] = useState(false);
 
   const handleSubmit = (event) => {
@@ -13,7 +14,15 @@ export default function Signin() {
     const password = event.target.password.value;
     axios
       .post(`${API}/users/auth/signin`, { username, password })
-      .then((res) => console.log(res.data))
+      .then((res) => {
+        setSignin({
+          ...signin,
+          token: res.data.JWT,
+          username: res.data.content.username,
+          signedin: true,
+        });
+        navigate("/trips");
+      })
       .catch((error) => {
         console.log(error);
         setFailedModal(true);
