@@ -28,6 +28,11 @@ const markers = [
       name: "Netherlands",
       coordinates: [5.291266, 52.132633],
     },
+    {
+      markerOffset: -15,
+      name: "Germany",
+      coordinates: [10.451526, 51.165691],
+    },
   ];
 
   const visitedCountries = markers.map(e => e.name)
@@ -48,6 +53,7 @@ const MapChart = ({ setTooltipContent }) => {
                   geography={geo}
                   fill={visitedCountries.includes(geo.properties.name)? "rgb(255, 79, 79)": "rgb(183, 221, 255)"}
                   stroke="#A31F42"
+                  strokeWidth={0.2}
                   onMouseEnter={() => {
                     setTooltipContent(`${geo.properties.name}`);
                   }}
@@ -78,7 +84,7 @@ const MapChart = ({ setTooltipContent }) => {
                   r={10}
                   fill="none"
                   stroke="rgb(30, 30, 151)"
-                  strokeWidth={1.6}
+                  strokeWidth={1.1}
                 />
               </Marker>
             ))}

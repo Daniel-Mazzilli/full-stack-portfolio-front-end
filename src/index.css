@@ -11,17 +11,18 @@ body {
 
 #suitcase{
   z-index: -1;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   height: 240px;
   padding-bottom: 20px;
   opacity: 0.8;
+  
 }
 
 #compass-rose {
   z-index: -1;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   height: 160px;
