@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../Provider/Provider";
 import Map from "./Map.js";
+import "./Trips.css";
 
 export default function Trips() {
   const navigate = useNavigate();
@@ -18,14 +19,16 @@ export default function Trips() {
       });
   }, []);
   return (
-    <div>
-      <h1>Trips</h1>
+    <div className="trips-page">
+      <div className="trips">
+        <h1>Trips</h1>
+        <ul>
+          {trips.map((trip) => {
+            return <li key={trip.id}><Link to={`/trips/${trip.id}`}>{trip.name}</Link></li>;
+          })}
+        </ul>
+      </div>
       <Map />
-      <ul>
-        {trips.map((trip) => {
-          return <li key={trip.id}>{trip.name}</li>;
-        })}
-      </ul>
     </div>
   );
 }

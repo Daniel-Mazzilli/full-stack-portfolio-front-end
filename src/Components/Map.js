@@ -43,7 +43,7 @@ function Map() {
   return (
     <div className="Map-component">
       <div className="Map">
-        <Tooltip id="tool-tip" anchorId="tool-tip-map" />
+        <Tooltip id="tool-tip" anchorId="tool-tip-map" noArrow="true"/>
         <ComposableMap id="tool-tip-map" data-tooltip-content={content}>
           <ZoomableGroup zoom={1}>
             <Geographies geography={geoUrl}>
@@ -52,8 +52,8 @@ function Map() {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    fill={visitedCountries.includes(geo.properties.name)? "red": "black"}
-                    stroke="white"
+                    fill={visitedCountries.includes(geo.properties.name)? "rgb(255, 79, 79)": "rgb(183, 221, 255)"}
+                    stroke="#A31F42"
                     onMouseEnter={() => {
                       setContent(geo.properties.name);
                     }}
@@ -62,7 +62,7 @@ function Map() {
                     }}
                     style={{
                       hover: {
-                        fill: "#F53",
+                        fill: "rgb(255, 79, 79)",
                         outline: "none",
                       },
                     }}
@@ -74,12 +74,9 @@ function Map() {
               <Marker key={name} coordinates={coordinates}>
                 <circle
                   r={10}
-                  //   fill="rgba(255, 79, 79, 0.6)"
                   fill="none"
-                  stroke="blue"
-                    // stroke="#fff"
-                //   stroke="rgba(255, 255, 255, 0.8)"
-                  strokeWidth={3}
+                  stroke="rgb(30, 30, 151)"
+                  strokeWidth={2.6}
                 />
                 {/* <text
                   textAnchor="middle"
