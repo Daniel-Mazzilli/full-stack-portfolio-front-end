@@ -6,7 +6,10 @@
 }
 
 .Map {
-    border-style: double;
-    width: 800px;
-    background-color: rgb(188, 235, 254);
+    width: 1000px;
+}
+
+#tool-tip{
+    background-color: green;
+    font-size: 26px;
 }
