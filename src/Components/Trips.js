@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../Provider/Provider";
-import Map from "./Map.js";
+import MapArea from "./MapArea.js"
+import MapSection from "./MapSection";
 import "./Trips.css";
+
 
 export default function Trips() {
   const navigate = useNavigate();
@@ -28,7 +30,8 @@ export default function Trips() {
           })}
         </ul>
       </div>
-      <Map />
+      {/* <MapArea /> */}
+      <MapSection />
     </div>
   );
 }

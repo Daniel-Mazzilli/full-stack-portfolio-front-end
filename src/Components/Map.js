@@ -43,7 +43,7 @@ function Map() {
   return (
     <div className="Map-component">
       <div className="Map">
-        <Tooltip id="tool-tip" anchorId="tool-tip-map" noArrow="true"/>
+        <Tooltip id="tool-tip" anchorId="tool-tip-map" noArrow="true" float/>
         <ComposableMap id="tool-tip-map" data-tooltip-content={content}>
           <ZoomableGroup zoom={1}>
             <Geographies geography={geoUrl}>

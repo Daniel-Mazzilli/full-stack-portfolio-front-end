@@ -1,0 +1,17 @@
+/* svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.map-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+#tool-tip {
+  background-color: darkgreen;
+  font-size: 22px;
+  color: rgb(183, 221, 255);
+}
