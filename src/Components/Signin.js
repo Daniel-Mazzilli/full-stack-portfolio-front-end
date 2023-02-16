@@ -10,7 +10,7 @@ export default function Signin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const username = event.target.username.value;
+    const username = event.target.username.value.toLowerCase();
     const password = event.target.password.value;
     axios
       .post(`${API}/users/auth/signin`, { username, password })

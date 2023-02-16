@@ -1,8 +1,9 @@
 #map-area {
     width: 900px;
-    margin: 0 auto;
-    border: 1px solid darkgreen;
+    margin: 60px auto;
+    border: 2px solid darkgreen;
     border-radius: 10px;
-    background-color: rgb(114, 252, 252);
-    margin-bottom: 40px;
+    background-color: #37c8f9;
+    /* background-color: rgb(8, 75, 126); */
+    /* margin-bottom: 40px; */
 }

@@ -8,7 +8,7 @@ import "./Signup.css";
 
 export default function Signup() {
   const navigate = useNavigate();
-  const { API, axios, users } = useContextProvider();
+  const { API, axios } = useContextProvider();
   const [user, setUser] = useState({
     full_name: "",
     email: "",
