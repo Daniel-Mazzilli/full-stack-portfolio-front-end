@@ -1,12 +1,11 @@
 import { memo } from "react";
 import {
+  ZoomableGroup,
   ComposableMap,
   Geographies,
   Geography,
-  Marker,
-  ZoomableGroup,
+  Marker
 } from "react-simple-maps";
-import "./MapChart.css"
 
 const markers = [
     {
@@ -38,15 +37,17 @@ const geoUrl =
 
 const MapChart = ({ setTooltipContent }) => {
   return (
-    <div id="map-chart">
+    <div id="map">
       <ComposableMap>
-        <ZoomableGroup>
+        <ZoomableGroup zoom={1.2}>
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map((geo) => (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
+                  fill={visitedCountries.includes(geo.properties.name)? "rgb(255, 79, 79)": "rgb(183, 221, 255)"}
+                  stroke="#A31F42"
                   onMouseEnter={() => {
                     setTooltipContent(`${geo.properties.name}`);
                   }}
@@ -55,7 +56,7 @@ const MapChart = ({ setTooltipContent }) => {
                   }}
                   style={{
                     default: {
-                      fill: "#D6D6DA",
+                    //   fill: "#D6D6DA",
                       outline: "none"
                     },
                     hover: {
@@ -71,6 +72,16 @@ const MapChart = ({ setTooltipContent }) => {
               ))
             }
           </Geographies>
+          {markers.map(({ name, coordinates, markerOffset }) => (
+              <Marker key={name} coordinates={coordinates}>
+                <circle
+                  r={10}
+                  fill="none"
+                  stroke="rgb(30, 30, 151)"
+                  strokeWidth={1.6}
+                />
+              </Marker>
+            ))}
         </ZoomableGroup>
       </ComposableMap>
     </div>
