@@ -22,6 +22,9 @@ export default function Trip() {
     <div className="trip">
       <h2>{trip.name}</h2>
       <p>{trip.description}</p>
+      <p>
+        Country: <span>{trip.country}</span>
+      </p>
     </div>
   );
 }

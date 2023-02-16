@@ -10,3 +10,8 @@
     justify-content: center;
     text-align: center;
 }
+
+.trip p span{
+    font-style: italic;
+    font-weight: bold;
+}
