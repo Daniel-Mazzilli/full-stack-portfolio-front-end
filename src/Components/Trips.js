@@ -8,7 +8,7 @@ import "./Tooltip.css";
 
 export default function Trips() {
   const navigate = useNavigate();
-  const { trips, signin } = useContextProvider();
+  const { trips, signin, visited } = useContextProvider();
   useEffect(() => {
     if (!signin.username) {
       navigate("/not-found");
@@ -40,6 +40,19 @@ export default function Trips() {
         </ul>
       </div>
       <MapArea />
+      <div id="stats">
+        <h2>You have traveled to <span>{visited.length}</span> countries.</h2>
+        <p>Visited countries are filled with a bright red. A marker is also placed.</p>
+        <h2>Future travels list coming soon</h2>
+        <ul>
+          <li>
+          </li>
+          <li>
+          </li>
+          <li>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
