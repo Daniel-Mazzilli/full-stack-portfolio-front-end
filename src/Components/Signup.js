@@ -162,6 +162,7 @@ export default function Signup() {
               curious, and keep exploring the world one trip at a time!
             </p>
             <p> Embrace the journey</p>
+            <p>ps. your personal data will be sold. Just kidding!</p>
             <button
               onClick={() => {
                 toggleTerms();
