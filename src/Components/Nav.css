@@ -1,10 +1,6 @@
 nav {
   height: 80px;
   background-color: rgb(255, 79, 79);
-  /* position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;; */
   padding: 4px 26px;
   align-items: center;
   display: flex;
@@ -16,8 +12,8 @@ nav a {
     text-decoration: none;
 }
 
-nav a h2 {
-    font-size: 46px;
+nav a h1 {
+    font-size: 60px;
 }
 
 .nav-link {
@@ -25,9 +21,11 @@ nav a h2 {
     border: 2px solid aquamarine;
     border-radius: 10px;
     background-color: darkgreen;
-    padding: 6px 10px;
+    padding: 6px 20px;
+    margin-left: 39px;
     color: aquamarine;
     height: auto;
+    z-index: 1;
 }
 
 .nav-link:hover {

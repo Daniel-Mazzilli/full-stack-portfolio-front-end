@@ -9,7 +9,7 @@ export default function Nav() {
     <nav>
       <img src={logo} alt="logo" height="140px" />
       <Link to="/">
-        <h2>Travel the World</h2>
+        <h1>Travel the W0rld</h1>
       </Link>
       <Link
         className="nav-link"

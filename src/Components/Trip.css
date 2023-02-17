@@ -1,17 +1,48 @@
 .trip {
     background-image: url("../Assets/postcard.png");
-    /* border: 2px solid purple; */
     border-style: double;
     width: 900px;
     height: 580px;
     display: flex;
     flex-direction: column;
     margin: 50px auto;
-    justify-content: center;
+    justify-content: end ;
     text-align: center;
+}
+
+.trip h2 {
+    font-size: 32px;
 }
 
 .trip p span{
     font-style: italic;
     font-weight: bold;
+}
+
+.trip p {
+    padding: 0 20px
+}
+
+#date {
+    font-weight: bold;
+}
+
+.trip .img-box {
+    width: 24vw;
+    height: 24vh;
+    /* border: 1px solid grey; */
+    /* border-radius: 10px; */
+    /* background-color: rgb(244, 222, 222); */
+    margin: 0 auto;
+}
+
+.trip .img-box img {
+    width: auto;
+    height: 24vh;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+.no-img{
+    opacity: 0.6;
 }
