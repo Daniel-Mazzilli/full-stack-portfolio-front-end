@@ -10,9 +10,10 @@
 }
 
 #add {
-  height: 80px;
-  border: 2px solid darkgreen;
+  height: 60px;
+  border: 2px solid rgb(30, 30, 151);
   border-radius: 50%;
+  margin-left: 8px;
 }
 
 .trips ul {
