@@ -3,12 +3,13 @@ import Signup from "./Signup.js";
 import Signin from "./Signin.js";
 import Trips from "./Trips.js";
 import Trip from "./Trip.js";
+import Home from "./Home.js";
 
 export default function RouteComponent() {
   return (
     <Routes>
       <Route path="/">
-        <Route index element={<h1>Home</h1>} />
+        <Route index element={<Home />} />
         <Route path="sign-in" element={<Signin />} />
         <Route path="sign-up" element={<Signup />} />
         <Route path="recover" element={<h2>Recover Page</h2>} />

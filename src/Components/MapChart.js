@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { useContextProvider } from "../Provider/Provider";
 import {
   ZoomableGroup,
   ComposableMap,
@@ -7,40 +8,12 @@ import {
   Marker,
 } from "react-simple-maps";
 
-const markers = [
-  {
-    markerOffset: -15,
-    name: "Italy",
-    coordinates: [12.56738, 41.87194],
-  },
-  {
-    markerOffset: -15,
-    name: "Ireland",
-    coordinates: [-8.24389, 53.41291],
-  },
-  {
-    markerOffset: -15,
-    name: "Israel",
-    coordinates: [34.851612, 31.046051],
-  },
-  {
-    markerOffset: -15,
-    name: "Netherlands",
-    coordinates: [5.291266, 52.132633],
-  },
-  {
-    markerOffset: -15,
-    name: "Germany",
-    coordinates: [10.451526, 51.165691],
-  },
-];
-
-const visitedCountries = markers.map((e) => e.name);
-
 const geoUrl =
   "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
 
 const MapChart = ({ setTooltipContent }) => {
+  const { markers, visited } = useContextProvider();
+
   return (
     <div id="map">
       <ComposableMap>
@@ -52,8 +25,10 @@ const MapChart = ({ setTooltipContent }) => {
                   key={geo.rsmKey}
                   geography={geo}
                   fill={
-                    visitedCountries.includes(geo.properties.name)
-                      ? "rgb(255, 79, 79)"
+                    visited
+                      ? visited.includes(geo.properties.name)
+                        ? "rgb(255, 79, 79)"
+                        : "#F7ED96"
                       : "#F7ED96"
                   }
                   stroke="#A31F42"
@@ -82,16 +57,15 @@ const MapChart = ({ setTooltipContent }) => {
               ))
             }
           </Geographies>
-          {markers.map(({ name, coordinates, markerOffset }) => (
-            <Marker key={name} coordinates={coordinates}>
-              <circle
-                r={10}
-                fill="none"
-                stroke="#290075"
-                strokeWidth={1.1}
-              />
-            </Marker>
-          ))}
+          {markers.length &&
+            markers.map(({ name, coordinates }) => (
+              <Marker
+                key={name}
+                coordinates={coordinates}
+              >
+                <circle r={10} fill="none" stroke="#290075" strokeWidth={1.1} />
+              </Marker>
+            ))}
         </ZoomableGroup>
       </ComposableMap>
     </div>

@@ -2,7 +2,7 @@ import { useContext, createContext, useState, useEffect } from "react";
 import axios from "axios";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
-import { coordinates } from "../Data/Coordinates.js"
+import { coordinates } from "../Data/Coordinates.js";
 import CompassRose from "../Assets/CompassRose.jpg";
 import Suitcase from "../Assets/suitcase.png";
 
@@ -20,6 +20,7 @@ export default function Provider({ children }) {
   });
   const [trips, setTrips] = useState([]);
   const [markers, setMarkers] = useState([]);
+  const [visited, setVisited] = useState([]);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [trigger, setTrigger] = useState(1);
 
@@ -37,24 +38,36 @@ export default function Provider({ children }) {
         .then((res) => setTrips(res.data))
         .catch((error) => {
           console.log(error);
-          // navigate("/not-found");
         });
     } else {
       setTrips([]);
     }
   }, [signin]);
 
-  useEffect(()=>{
-    
-  },[trips])
+  useEffect(() => {
+    if (trips.length) {
+      const countries = [...new Set(trips.map((e) => e.country))];
+      setVisited(countries);
+      const foundCoordinates = [];
+      countries.map((country) =>
+        coordinates.forEach((e) => {
+          if (e.name === country) {
+            foundCoordinates.push({
+              name: e.name,
+              coordinates: [+e.longitude, +e.latitude],
+            });
+          }
+        })
+      );
+      setMarkers(foundCoordinates);
+    }
+  }, [trips]);
 
   return (
     <ContextData.Provider
       value={{
         API,
         axios,
-        // users,
-        // setUsers,
         theme,
         setTheme,
         trigger,
@@ -63,6 +76,8 @@ export default function Provider({ children }) {
         setSignin,
         trips,
         setTrips,
+        markers,
+        visited,
       }}
     >
       <Nav />

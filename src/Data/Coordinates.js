@@ -310,7 +310,7 @@ export const coordinates = [
   { name: "Ukraine", longitude: "31.16558", latitude: "48.379433" },
   { name: "Uganda", longitude: "32.290275", latitude: "1.373333" },
   { name: "U.S. Minor Outlying Islands", longitude: "", latitude: "" },
-  { name: "United States", longitude: "-95.712891", latitude: "37.09024" },
+  { name: "United States of America", longitude: "-95.712891", latitude: "37.09024" },
   { name: "Uruguay", longitude: "-55.765835", latitude: "-32.522779" },
   { name: "Uzbekistan", longitude: "64.585262", latitude: "41.377491" },
   { name: "Vatican City", longitude: "12.453389", latitude: "41.902916" },

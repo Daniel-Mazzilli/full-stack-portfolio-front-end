@@ -263,7 +263,7 @@ export default function SelectCountry() {
       <option value="Ukraine">Ukraine</option>
       <option value="United Arab Emirates">United Arab Emirates</option>
       <option value="United Kingdom">United Kingdom</option>
-      <option value="United States">United States</option>
+      <option value="United States of America">United States</option>
       <option value="United States Minor Outlying Islands">
         United States Minor Outlying Islands
       </option>
