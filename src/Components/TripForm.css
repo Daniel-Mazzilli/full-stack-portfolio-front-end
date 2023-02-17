@@ -43,7 +43,7 @@
 }
 
 #trip-submit{
-    width: 20%;
+    width: 40%;
     margin: 30px auto;
     grid-column: 2/3;
     background-color: darkgreen;
