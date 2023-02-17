@@ -6,4 +6,15 @@
     border-radius: 20px;
     background-color: #37c8f9;
     color: darkgreen;
+    padding: 20px;
+}
+
+#home a{
+    text-decoration: none;
+    color: rgb(30, 30, 151);
+}
+
+#home img {
+    border-radius: 10px;
+    border: 2px solid darkgreen;
 }
