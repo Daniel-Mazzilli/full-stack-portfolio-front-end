@@ -1,0 +1,9 @@
+.trip-form{
+    width: 60vw;
+    margin: 40px auto;
+    text-align: center;
+    border: 2px solid rgb(30, 30, 151);
+    border-radius: 20px;
+    background-color: #37c8f9;
+    color: darkgreen;
+}

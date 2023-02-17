@@ -4,6 +4,7 @@ import Signin from "./Signin.js";
 import Trips from "./Trips.js";
 import Trip from "./Trip.js";
 import Home from "./Home.js";
+import TripForm from "./TripForm.js";
 
 export default function RouteComponent() {
   return (
@@ -15,7 +16,11 @@ export default function RouteComponent() {
         <Route path="recover" element={<h2>Recover Page</h2>} />
         <Route path="trips">
           <Route index element={<Trips />} />
-          <Route path=":id" element={<Trip />} />
+          <Route path="new" element={<TripForm />} />
+          <Route path=":id">
+            <Route index element={<Trip />} />
+            <Route path="edit" element={<TripForm />} />
+          </Route>
         </Route>
         <Route path="not-found" element={<h2>Page Not Found</h2>} />
       </Route>

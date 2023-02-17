@@ -55,7 +55,7 @@ export default function Trip() {
         <Link to="/trips">
           <img src={Back} alt="back icon" />
         </Link>
-        <Link>
+        <Link to="edit">
           <img src={Edit} alt="edit icon" />
         </Link>
         <img
