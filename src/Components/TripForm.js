@@ -56,8 +56,9 @@ export default function TripForm() {
 
   return (
     <div className="trip-form">
-      <h2>{id ? "Edit Trip" : "Add a trip"}</h2>
       <form className="form-for-trip" onSubmit={handleSubmit}>
+        <div></div>
+        <h2>{id ? "Edit Trip" : "Add a trip"}</h2>
         <label htmlFor="name">Entry title:</label>
         <input
           id="name"
