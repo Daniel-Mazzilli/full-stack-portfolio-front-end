@@ -6,6 +6,7 @@ import Delete from "../Assets/delete.png";
 import Edit from "../Assets/edit.png";
 import Back from "../Assets/back.png";
 import "./Trip.css";
+import "./TooltipTrip.css";
 
 export default function Trip() {
   const { id } = useParams();
@@ -52,18 +53,27 @@ export default function Trip() {
         </p>
       </div>
       <div className="buttons">
-        <Link to="/trips">
-          <img src={Back} alt="back icon" />
-        </Link>
-        <Link to="edit">
-          <img src={Edit} alt="edit icon" />
-        </Link>
-        <img
-          onClick={handleDelete}
-          id="remove"
-          src={Delete}
-          alt="delete icon"
-        />
+        <div class="tooltip">
+          <Link to="/trips">
+            <img src={Back} alt="back icon" />
+          </Link>
+          <span class="tooltiptext">return to trips</span>
+        </div>
+        <div class="tooltip">
+          <Link to="edit">
+            <img src={Edit} alt="edit icon" />
+          </Link>
+          <span class="tooltiptext">edit trip</span>
+        </div>
+        <div class="tooltip">
+          <img
+            onClick={handleDelete}
+            id="remove"
+            src={Delete}
+            alt="delete icon"
+          />
+          <span class="tooltiptext">delete trip</span>
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,38 @@
+.trip-page .buttons .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.trip-page .buttons .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(30, 30, 151);
+  color: rgb(187, 240, 249);
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 4px;
+  opacity: 0.9;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.trip-page .buttons .tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* .trip-page .buttons  .tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(30, 30, 151) transparent transparent transparent;
+  opacity: 0.9;
+} */

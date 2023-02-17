@@ -16,6 +16,10 @@
   margin-left: 8px;
 }
 
+#add::after{
+  content: attr(data-tooltip);
+}
+
 .trips ul {
     list-style-image: url("../Assets/plane.png");
     line-height: 3;
