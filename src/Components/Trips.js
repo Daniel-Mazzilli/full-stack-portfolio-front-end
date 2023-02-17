@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useContextProvider } from "../Provider/Provider";
 import { Tooltip } from "react-tooltip";
 import MapArea from "./MapArea.js";
+import Add from "../Assets/add3.png";
 import "./Trips.css";
 
 export default function Trips() {
@@ -16,8 +17,8 @@ export default function Trips() {
   return (
     <div className="trips-page">
       <div className="trips">
-        <Tooltip id="my-tooltip" />
         <h2>Trips</h2>
+        <Link to="new"><img id="add" src={Add} alt="add trip button" /></Link>
         <ul>
           {trips.map((trip) => {
             return (

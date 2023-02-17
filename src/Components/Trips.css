@@ -4,9 +4,15 @@
 }
 
 .trips h2 {
-  font-size: 32px;
+  font-size: 40px;
   text-align: center;
   color: rgb(30, 30, 151);
+}
+
+#add {
+  height: 80px;
+  border: 2px solid darkgreen;
+  border-radius: 50%;
 }
 
 .trips ul {

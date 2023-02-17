@@ -43,6 +43,14 @@ export default function TripForm() {
           navigate("/trips");
         })
         .catch((error) => console.log(error));
+    } else {
+      axios
+        .post(`${API}/users/${signin.username}/trips`, formData)
+        .then(() => {
+          setTrigger(-trigger);
+          navigate("/trips");
+        })
+        .catch((error) => console.log(error));
     }
   };
 
