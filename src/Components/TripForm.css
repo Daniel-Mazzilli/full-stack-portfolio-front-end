@@ -4,6 +4,55 @@
     text-align: center;
     border: 2px solid rgb(30, 30, 151);
     border-radius: 20px;
-    background-color: #37c8f9;
-    color: darkgreen;
+    background-color: #e8e183;
+    color: rgb(30, 30, 151);
+}
+
+.trip-form h2 {
+    font-size: 32px;
+}
+
+.form-for-trip {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    text-align: left;
+    column-gap: 24px;
+    width: 88%;
+    margin: 0 auto;
+}
+
+.form-for-trip label {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-for-trip input, .form-for-trip select option, .form-for-trip textarea, .form-for-trip select {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 22px;
+    color:rgb(30, 30, 151)
+    /* margin-bottom: 8px; */
+} 
+
+.form-for-trip textarea{
+    height: 80px;
+    text-align: left;
+}
+
+#trip-submit{
+    width: 20%;
+    margin: 30px auto;
+    grid-column: 1/3;
+    background-color: darkgreen;
+    border: 2px solid rgb(30, 30, 151);
+    border-radius: 10px;
+    color: rgb(187, 240, 249);
+    padding: 2px;
+    font-size: 18px;
+}
+
+#trip-submit:hover{
+    background-color: rgb(255, 79, 79);
 }

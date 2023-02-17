@@ -12,13 +12,13 @@ export default function TripForm() {
     name: "",
     circa: "",
     country: "",
-    go_back: "",
-    image: "no image",
+    go_back: false,
+    image: "",
     description: "",
   });
 
   useEffect(() => {
-    if (id && !signin.username) {
+    if (!signin.username) {
       navigate("/not-found");
     }
     if (id) {
@@ -33,10 +33,23 @@ export default function TripForm() {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (id) {
+      axios
+        .put(`${API}/users/${signin.username}/trips/${id}`, formData)
+        .then(() => {
+          setTrigger(-trigger);
+          navigate("/trips");
+        })
+        .catch((error) => console.log(error));
+    }
+  };
+
   return (
     <div className="trip-form">
-      <h2>Form</h2>
-      <form>
+      <h2>{id ? "Edit Trip" : "Add a trip"}</h2>
+      <form className="form-for-trip" onSubmit={handleSubmit}>
         <label htmlFor="name">Entry title:</label>
         <input
           id="name"
@@ -53,15 +66,15 @@ export default function TripForm() {
           onChange={handleChange}
           required
         />
-        <label htmlFor="image">Photo to attach:</label>
+        <label htmlFor="image">Attach photo:</label>
         <input
           id="image"
           type="text"
-          placeholder="type 'no image' for default placeholder img icon"
+          placeholder="img url || 'no image' for default icon"
           value={formData.image}
           onChange={handleChange}
         />
-        <label htmlFor="description">Short trip description:</label>
+        <label htmlFor="description">Short description:</label>
         <textarea
           id="description"
           value={formData.description}
@@ -85,6 +98,11 @@ export default function TripForm() {
           onChange={() =>
             setFormData({ ...formData, go_back: !formData.go_back })
           }
+        />
+        <input
+          id="trip-submit"
+          type="submit"
+          value={id ? "submit changes" : "add trip"}
         />
       </form>
     </div>
