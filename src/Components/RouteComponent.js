@@ -14,7 +14,7 @@ export default function RouteComponent() {
         <Route index element={<Home />} />
         <Route path="sign-in" element={<Signin />} />
         <Route path="sign-up" element={<Signup />} />
-        <Route path="recover" element={<h2>Recover Page</h2>} />
+        <Route path="recover" element={<h2 style={{textAlign:"center", fontSize: "46px"}}>recovery page coming soon</h2>} />
         <Route path="trips">
           <Route index element={<Trips />} />
           <Route path="new" element={<TripForm />} />
