@@ -18,3 +18,13 @@
     border-radius: 10px;
     border: 2px solid darkgreen;
 }
+
+#home #bio-buttons img{
+    border: none;
+    padding: 0 20px;
+    opacity: 0.8;
+}
+
+#home #bio-buttons img:hover{
+    transform: scale(1.2);
+}
