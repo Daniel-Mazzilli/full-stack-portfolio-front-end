@@ -42,7 +42,7 @@ export default function Provider({ children }) {
     } else {
       setTrips([]);
     }
-  }, [signin]);
+  }, [signin, trigger]);
 
   useEffect(() => {
     if (trips.length) {

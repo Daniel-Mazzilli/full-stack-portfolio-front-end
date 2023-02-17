@@ -1,3 +1,9 @@
+.trip-page{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
 .trip {
     background-image: url("../Assets/postcard.png");
     border-style: double;
@@ -5,7 +11,7 @@
     height: 580px;
     display: flex;
     flex-direction: column;
-    margin: 50px auto;
+    margin: 20px auto;
     justify-content: end ;
     text-align: center;
 }
@@ -44,5 +50,18 @@
 }
 
 .no-img{
-    opacity: 0.6;
+    opacity: 0.5;
+}
+
+.buttons {
+    margin: 0 auto;
+}
+
+.buttons img {
+    height: 40px;
+    margin: 0 20px;
+}
+
+#remove:hover{
+cursor: pointer;
 }

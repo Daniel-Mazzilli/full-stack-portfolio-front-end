@@ -13,18 +13,18 @@ body {
 }
 
 #suitcase{
-  z-index: 1;
+  z-index: -1;
   position: fixed;
   bottom: 0;
   left: 0;
   height: 240px;
   padding-bottom: 20px;
-  opacity: 0.8;
+  opacity: 0.6;
   
 }
 
 #compass-rose {
-  z-index: 1;
+  z-index: -1;
   position: fixed;
   bottom: 0;
   right: 0;
