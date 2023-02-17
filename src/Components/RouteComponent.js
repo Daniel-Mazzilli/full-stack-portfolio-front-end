@@ -5,6 +5,7 @@ import Trips from "./Trips.js";
 import Trip from "./Trip.js";
 import Home from "./Home.js";
 import TripForm from "./TripForm.js";
+import NotFound from "./NotFound.js";
 
 export default function RouteComponent() {
   return (
@@ -22,7 +23,7 @@ export default function RouteComponent() {
             <Route path="edit" element={<TripForm />} />
           </Route>
         </Route>
-        <Route path="not-found" element={<h2>Page Not Found</h2>} />
+        <Route path="not-found" element={<NotFound />} />
       </Route>
       <Route path="*" element={<Navigate to="/not-found" />} />
     </Routes>

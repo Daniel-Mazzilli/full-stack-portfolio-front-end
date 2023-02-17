@@ -1,0 +1,50 @@
+#not-found {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 40px auto;
+  text-align: center;
+  background-color: rgb(30, 30, 151);
+  padding: 20px;
+  border-radius: 40px;
+  color: rgb(255, 79, 79);
+}
+
+#not-found h2 {
+  font-size: 60px;
+  line-height: 0.2;
+}
+
+#not-found #img-container img {
+    border-radius: 10px;
+}
+
+#not-found p {
+  font-size: 28px;
+}
+
+#not-found button {
+    width: 120px;
+    height: 30px;
+    align-self: center;
+    border: 2px solid rgb(187, 240, 249) ;
+    background-color: aquamarine;
+    border-radius: 6px;
+    font-size: 16px;
+    color: rgb(30, 30, 151);
+}
+
+#not-found button:hover{
+    background-color: rgb(255, 79, 79);
+    cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(4, 1, 0, 0.9);
+  z-index: 1000;
+}
