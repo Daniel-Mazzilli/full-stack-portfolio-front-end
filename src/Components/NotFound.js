@@ -11,7 +11,7 @@ export default function NotFound() {
         <div id="img-container">
           <img src={Polizia} alt="not found page image" />
         </div>
-        <p>Invalid url. May requrie sign-in for access</p>
+        <p>Invalid url. May require sign-in for access</p>
         <button
           onClick={() => {
             navigate("/");
