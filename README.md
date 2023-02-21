@@ -14,6 +14,7 @@ This application was built following the PERN stack, and uses RESTful routes con
 - `cd` to the directory where the repo was cloned
 - `npm install` to install the dependencies
 - create a `.env` file in the outmost level and make sure it contains `REACT_APP_API_URL=` equal to either the deployed back-end link which is provided below or to your local host where you will be running the cloned back-end repo.
+- run `npm start` to open the React app on localhost:3000.
 
 ### Project Links
 
