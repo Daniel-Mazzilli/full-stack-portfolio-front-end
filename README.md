@@ -8,7 +8,7 @@ This application was built following the PERN stack, and uses RESTful routes con
 
 ## Getting Started
 
-- You try out the application by visiting the `deployed front end` link below or:
+- You may try out the application by visiting the `deployed front-end` link below or:
 
 - Clone this repo
 - `cd` to the directory where the repo was cloned
@@ -22,13 +22,13 @@ This application was built following the PERN stack, and uses RESTful routes con
 [Deployed Front-End](https://travel-the-w0rld.netlify.app/)
 
 ### User Stories
-- As a user, I am able to learn more about the project and dev on the home page.
+- As a user, on the home page I am able to learn more about the project and dev.
 - As a user, I am able to create my personal account via the sign-up page.
 - As a user, I will sign-in from the sign-in page and be redirected to my index page.
-- As a user, I will see on the index page a map that will dynamically update as trips are added, updated, and deleted. There is also a section in the right top corner that keeps tracks of all the different countries visited.
+- As a user, I will see on the index page a map that will dynamically update as trips are added, updated, and deleted. There is also a section in the right top corner that keeps tracks of the number of the different countries visited.
 - As a user, I can zoom into the map, and by hovering over the different countries I will see tooltips appearing with the country names.
 - As a user, by clicking on the large `+` symbol on the index page I will be navigated to a form that allows for the creation of new trips.
-- As a user, I may click on one of the trips in the list to the left of the map from the index page. This is will take me to the individual page of that trip. On that page there will be back to index, update and delete button options.
+- As a user, I may click on one of the trips in the list to the left of the map from the index page. This is will take me to the individual page of that trip. On that page there will be back to index, update, and delete button options.
 - As a user, I may update a trip I created by clicking on the update button from the trip page. I will be taken to a form where I can edit the trip details.
 - As a user, I may remove a created trip by clicking on the delete button from the trip page.
 
