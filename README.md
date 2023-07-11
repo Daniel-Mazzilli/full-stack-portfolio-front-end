@@ -1,8 +1,6 @@
 # Travel the W0rld
 ## My Full Stack Portfolio project
 
-### DB needs to be reconfigured on Render, once that is done full functionality will be reinstated. Hoping to get to that soon
-
 ### Project Overview
 
 For the past couple of years I have been very interested in traveling more, and decided it would be a fun Portfolio Project to create a full stack web application that could be used as a travel journal and tracker, with a dynamic map that displays the countries one has visited.
