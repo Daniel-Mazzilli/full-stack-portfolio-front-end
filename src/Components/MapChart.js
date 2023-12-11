@@ -7,9 +7,10 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
-
-const geoUrl =
-  "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
+//outdated link as of Dec 2023, replaced with link below
+// const geoUrl =
+//   "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
+const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
 
 const MapChart = ({ setTooltipContent }) => {
   const { markers, visited } = useContextProvider();
