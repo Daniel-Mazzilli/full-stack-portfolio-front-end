@@ -7,10 +7,16 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
+import mapJson from "../Data/world_map.json"
+
 //outdated link as of Dec 2023, replaced with link below
 // const geoUrl =
 //   "https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json";
-const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
+
+// const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json"
+
+// added a json file to the file to prevent links from going down
+const geoUrl = mapJson;
 
 const MapChart = ({ setTooltipContent }) => {
   const { markers, visited } = useContextProvider();
